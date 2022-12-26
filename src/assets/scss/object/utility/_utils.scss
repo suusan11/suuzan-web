@@ -1,0 +1,22 @@
+@use "../../foundation/mixin" as m;
+
+/*---------- 
+break depend on the browser size
+----------*/
+.pc {
+    @include m.mq(sp){
+        display: none;
+    }
+}
+.sp {
+    display: none;
+    @include m.mq(sp){
+        display: block;
+    }
+}
+.smp {
+    display: none;
+    @include m.mq(sp_min){
+        display: block;
+    }
+}
