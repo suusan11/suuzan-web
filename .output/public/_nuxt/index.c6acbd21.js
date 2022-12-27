@@ -1,0 +1,1 @@
+import{_ as c}from"./Home.vue_vue_type_script_setup_true_lang.5d32081c.js";import{j as e,c as r,o as t}from"./entry.f00074bf.js";import"./siteSettings.9816c89e.js";import"./Tags.413eb4ee.js";const n={};function _(s,a){const o=c;return t(),r(o,{page:1})}const d=e(n,[["render",_]]);export{d as default};
