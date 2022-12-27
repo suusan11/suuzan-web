@@ -2,6 +2,16 @@
     import { MicroCMSQueries } from 'microcms-js-sdk'
     import { BLOG_PER_PAGE } from '../settings/siteSettings';
 
+    useHead({
+        title: '検索ページ',
+        meta: [
+            {
+            name: 'description',
+            content: '検索ページ',
+            },
+        ],
+    });
+
     type Props = {
         catId?: string
     }

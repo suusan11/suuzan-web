@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="l-inner__flex">
-            <nuxt-link to="/"><h1 class="title">HOME</h1></nuxt-link>
+            <nuxt-link to="/"><h1 class="title">POCO A POCO</h1></nuxt-link>
             <SearchForm />
         </div>
     </header>
