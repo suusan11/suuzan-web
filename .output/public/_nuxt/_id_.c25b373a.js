@@ -1,1 +1,0 @@
-import{_ as t}from"./Home.vue_vue_type_script_setup_true_lang.5d32081c.js";import{a as n,b as r,c as s,u as p,o as c}from"./entry.f00074bf.js";import"./siteSettings.9816c89e.js";import"./Tags.413eb4ee.js";const g=n({__name:"[id]",setup(m){const e=r(),o=Number(e.params.id||1);return(_,u)=>{const a=t;return c(),s(a,{page:p(o)},null,8,["page"])}}});export{g as default};
