@@ -13,7 +13,7 @@
     });
 
     type Props = {
-        catId?: string
+        catId?: string | undefined
     }
     const { catId } = defineProps<Props>()
 
@@ -23,7 +23,7 @@
     const limit = BLOG_PER_PAGE
     const queries: MicroCMSQueries = {
         q: query,
-        orders: '-publishedAt',
+        // orders: '-publishedAt', // ここでエラー！！
         limit: limit,
         offset: (page - 1) * limit,
     }
