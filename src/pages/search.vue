@@ -18,7 +18,7 @@
     const { catId } = defineProps<Props>()
 
     const route = useRoute()
-    const query = String(route.query.q)
+    const query = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
     const page = Number(route.query.page || 1)
     const limit = BLOG_PER_PAGE
     const queries: MicroCMSQueries = {
@@ -40,12 +40,12 @@
 
 <template>
     <div class="l-container l-inner__flex">
-        <main v-if="posts">
+        <main>
             <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p>
             <!-- <div v-if="posts && posts.contents"> -->
-                <PostList v-if="posts.contents" :posts="posts.contents" />
+                <PostList v-if="posts && posts.contents" :posts="posts.contents" />
             <!-- </div> -->
-            <div v-if="posts.contents.length == 0">
+            <div v-if="posts && posts.contents.length == 0">
                 <h1 class="no-result">「{{ query }}」の記事は見つかりませんでした。</h1>
             </div>
         </main>
