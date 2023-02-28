@@ -42,9 +42,9 @@
     <div class="l-container l-inner__flex">
         <main>
             <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p>
-            <!-- <div v-if="posts && posts.contents"> -->
-                <PostList v-if="posts && posts.contents" :posts="posts.contents" />
-            <!-- </div> -->
+            <div v-if="posts && posts.contents">
+                <PostList :posts="posts.contents" />
+            </div>
             <div v-if="posts && posts.contents.length == 0">
                 <h1 class="no-result">「{{ query }}」の記事は見つかりませんでした。</h1>
             </div>
