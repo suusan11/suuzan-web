@@ -58,7 +58,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/foundation/rem" as r;
+@use "../../assets/scss/foundation/rem" as r;
     .result {
         font-size: r.f-rem(16);
         text-align: left;
