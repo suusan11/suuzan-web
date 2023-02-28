@@ -24,8 +24,8 @@
     const queries: MicroCMSQueries = {
         q: query,
         // orders: '-publishedAt', // ここでエラー！！
-        limit: limit,
-        offset: (page - 1) * limit,
+        // limit: limit,
+        // offset: (page - 1) * limit,
     }
 
     const { data: posts } = await useFetch('/api/postList', { params: queries })
