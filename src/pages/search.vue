@@ -21,13 +21,11 @@
     const query = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
     const page = Number(route.query.page || 1)
     const limit = BLOG_PER_PAGE
-    console.log(limit);
-    console.log(page);
     const queries: MicroCMSQueries = {
         q: query,
         // orders: '-publishedAt', // ここでエラー！！
-        limit: limit,
-        offset: (page - 1) * limit,
+        // limit: limit,
+        // offset: (page - 1) * limit,
     }
 
     const { data: posts } = await useFetch('/api/postList', { params: queries })
