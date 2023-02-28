@@ -40,7 +40,7 @@
 
 <template>
     <div class="l-container l-inner__flex">
-        <main v-if="posts">
+        <main>
             <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p>
             <div v-if="posts && posts.contents">
                 <PostList :posts="posts.contents" />
