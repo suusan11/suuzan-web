@@ -23,7 +23,7 @@
 @use "../assets/scss/foundation/font" as f;
 @use "../assets/scss/foundation/rem" as r;
     .l-inner__flex {
-        gap: 0.5%;
+        gap: 2rem .5%;
     }
     .card {
         width: 33%;
