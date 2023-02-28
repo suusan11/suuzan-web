@@ -1,6 +1,6 @@
 <script setup lang="ts">
     type Props = {
-        keyword?: string
+        keyword?: string | undefined
     }
 
     const { keyword } = defineProps<Props>()
