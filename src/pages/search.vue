@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { MicroCMSQueries } from 'microcms-js-sdk'
-    import { BLOG_PER_PAGE } from '../../settings/siteSettings';
+    import { BLOG_PER_PAGE } from '../settings/siteSettings';
 
     useHead({
         title: '検索ページ',
@@ -23,7 +23,7 @@
     const limit = BLOG_PER_PAGE
     const queries: MicroCMSQueries = {
         q: query,
-        orders: '-publishedAt', // ここでエラー！！
+        orders: '-publishedAt',
         limit: limit,
         offset: (page - 1) * limit,
     }
@@ -58,7 +58,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use "../../assets/scss/foundation/rem" as r;
+@use "../assets/scss/foundation/rem" as r;
     .result {
         font-size: r.f-rem(16);
         text-align: left;
