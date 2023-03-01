@@ -24,8 +24,8 @@
     const queries: MicroCMSQueries = {
         q: query,
         orders: '-publishedAt',
-        // limit: limit,
-        // offset: (page - 1) * limit,
+        limit: limit,
+        offset: (page - 1) * limit,
     }
 
     const { data: posts } = await useFetch('/api/postList', { params: queries })
@@ -33,7 +33,7 @@
     // console.log("👻" + JSON.stringify(posts))
 
     const totalCount = posts.value !== null ? posts.value.totalCount : null
-    // const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
+    const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
 
     // queryが変化した場合にページをリロードする
     watch(() => route.query, () => location.reload())
@@ -53,7 +53,7 @@
         <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
         </aside>
-        <!-- <Pagination v-if="numPages" :numPages="numPages" :current="page" :keyword="query" /> -->
+        <Pagination v-if="numPages" :numPages="numPages" :current="page" :keyword="query" />
     </div>
 </template>
 
