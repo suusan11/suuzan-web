@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            title: 'POCO A POCO',
+            title: 'IDEA BOOK',
             meta: [{ name: 'description', content: 'suuzanのまなびコレクション' }],
             // link: [{ rel: 'icon', href: '/icon.png' }],
         },
