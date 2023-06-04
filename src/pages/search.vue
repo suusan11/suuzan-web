@@ -23,12 +23,12 @@
     // const limit = BLOG_PER_PAGE
     const queries: MicroCMSQueries = {
         q: query,
-        orders: '-publishedAt',
+        // orders: '-publishedAt',
         // limit: limit,
         // offset: (page - 1) * limit,
     }
 
-    const { data: posts } = await useFetch('/api/postList/', { params: queries })
+    const { data: posts } = await useFetch('/api/postList', { params: queries })
     const { data: cats } = await useFetch('/api/tagList')
     console.log("👻" + JSON.stringify(posts))
 
