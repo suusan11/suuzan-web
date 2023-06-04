@@ -14,7 +14,7 @@
 
     function submit() {
         if (canSubmit()) {
-            return navigateTo({
+            return navigateTo({ //router.push()の代わりにvue3で採用しているページ遷移
                 path: '/search',
                 query: {
                     q: query.value
