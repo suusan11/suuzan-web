@@ -28,9 +28,9 @@
         // offset: (page - 1) * limit,
     }
 
-    const { data: posts } = await useFetch('/api/postList', { params: queries })
-    // const { data: cats } = await useFetch('/api/tagList')
-    console.log("👻" + JSON.stringify(posts))
+    const { data } = await useFetch('/api/postList', { params: queries })
+    const { data: cats } = await useFetch('/api/tagList')
+    console.log("👻" + JSON.stringify(data))
 
     // const totalCount = posts.value !== null ? posts.value.totalCount : null
     // const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
@@ -43,7 +43,7 @@
     <div class="l-container l-inner__flex">
         <main>
             <p>💁‍♀️query: {{ query }}</p>
-            <p>💁‍♀️posts: {{ posts }}</p>
+            <p>💁‍♀️posts: {{ data }}</p>
             <!-- <p>💁‍♀️posts.contents: {{ posts ? posts.contents : null }}</p> -->
             <!-- <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p> -->
             <div v-if="posts && posts.contents">
