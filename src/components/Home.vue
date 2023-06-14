@@ -28,7 +28,6 @@
 
 <template>
     <div class="l-container l-inner__flex">
-        <p>💁‍♀️posts: {{ posts }}</p>
         <main v-if="posts">
             <PostList v-if="posts.contents" :posts="posts.contents" />
             <div v-if="posts.contents.length == 0">

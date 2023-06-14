@@ -19,21 +19,21 @@
 
     const route = useRoute()
     const query = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
-    // const page = Number(route.query.page || 1)
-    // const limit = BLOG_PER_PAGE
+    const page = Number(route.query.page || 1)
+    const limit = BLOG_PER_PAGE
     const queries: MicroCMSQueries = {
         q: query,
-        // orders: '-publishedAt',
-        // limit: limit,
-        // offset: (page - 1) * limit,
+        orders: '-publishedAt',
+        limit: limit,
+        offset: (page - 1) * limit,
     }
 
-    const { data } = await useFetch('/api/postList', { params: queries })
+    const { data: posts } = await useFetch('/api/postList', { params: queries })
     const { data: cats } = await useFetch('/api/tagList')
-    console.log("👻" + JSON.stringify(data))
+    console.log("👻" + JSON.stringify(posts))
 
-    // const totalCount = posts.value !== null ? posts.value.totalCount : null
-    // const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
+    const totalCount = posts.value !== null ? posts.value.totalCount : null
+    const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
 
     // queryが変化した場合にページをリロードする
     watch(() => route.query, () => location.reload())
@@ -42,10 +42,9 @@
 <template>
     <div class="l-container l-inner__flex">
         <main>
-            <p>💁‍♀️query: {{ query }}</p>
-            <p>💁‍♀️posts: {{ data }}</p>
-            <!-- <p>💁‍♀️posts.contents: {{ posts ? posts.contents : null }}</p> -->
-            <!-- <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p> -->
+            <!-- <p>💁‍♀️query: {{ query }}</p>
+            <p>💁‍♀️posts: {{ posts }}</p> -->
+            <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p>
             <div v-if="posts && posts.contents">
                 <PostList :posts="posts && posts.contents" />
             </div>
@@ -56,7 +55,7 @@
         <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
         </aside>
-        <!-- <Pagination v-if="numPages" :numPages="numPages" :current="page" :keyword="query" /> -->
+        <Pagination v-if="numPages" :numPages="numPages" :current="page" :keyword="query" />
     </div>
 </template>
 
