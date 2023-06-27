@@ -24,5 +24,10 @@ export default defineNuxtConfig({
             'Hanken+Grotesk': [300,400,500],
         },
         display: 'swap'
-    }
+    },
+    generate: {
+        routes: [
+          '/search' // デプロイ先のパスに対応するルートを追加
+        ]
+    },
 })
