@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     srcDir: 'src/',
     runtimeConfig: {
         apiKey: API_KEY,
-        serviceDomain: SERVICE_DOMAIN
+        serviceDomain: SERVICE_DOMAIN,
+        target: 'all'
     },
     app: {
         head: {
