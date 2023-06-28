@@ -1,2 +1,2 @@
 // Blogの１ページあたりの記事数
-export const BLOG_PER_PAGE = 10
+export const BLOG_PER_PAGE = 3
