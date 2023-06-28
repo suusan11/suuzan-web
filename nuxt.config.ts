@@ -3,11 +3,21 @@ const { API_KEY, SERVICE_DOMAIN } = process.env;
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     srcDir: 'src/',
-    runtimeConfig: {
-        apiKey: API_KEY,
+    modules: [
+        "nuxt-microcms-module",
+        '@nuxtjs/google-fonts'
+    ],
+    microCMS: {
         serviceDomain: SERVICE_DOMAIN,
+        apiKey: API_KEY,
         target: 'server'
     },
+    // runtimeConfig: {
+    //     apiKey: API_KEY,
+    //     serviceDomain: SERVICE_DOMAIN,
+    //     target: 'server'
+    // },
+
     app: {
         head: {
             title: 'IDEA BOOK',
@@ -16,9 +26,9 @@ export default defineNuxtConfig({
         },
     },
     css: ["@/assets/scss/style.scss"],
-    modules: [
-        '@nuxtjs/google-fonts',
-    ],
+    // modules: [
+    //     '@nuxtjs/google-fonts',
+    // ],
     googleFonts: {
         families: {
             'Noto+Sans+JP': [300,400,500],
