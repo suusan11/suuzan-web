@@ -36,7 +36,7 @@
     const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
 
     // queryが変化した場合にページをリロードする
-    // watch(() => route.query, () => location.reload())
+    watch(() => route.query, () => location.reload())
 </script>
 
 <template>
