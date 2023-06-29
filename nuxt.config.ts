@@ -3,9 +3,10 @@ const { API_KEY, SERVICE_DOMAIN } = process.env;
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     srcDir: 'src/',
+    ssr: true,
     runtimeConfig: {
         apiKey: API_KEY,
-        serviceDomain: SERVICE_DOMAIN,
+        serviceDomain: SERVICE_DOMAIN
         // target: 'server'
     },
 
