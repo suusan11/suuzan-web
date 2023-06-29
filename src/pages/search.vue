@@ -29,7 +29,7 @@
     }
 
     const { data: posts } = await useFetch('/api/postList', { params: queries })
-    // const { data: cats } = await useFetch('/api/tagList')
+    const { data: cats } = await useFetch('/api/tagList')
     console.log("👻" + JSON.stringify(posts))
 
     const totalCount = posts.value !== null ? posts.value.totalCount : null
