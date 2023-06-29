@@ -27,9 +27,4 @@ export default defineNuxtConfig({
         },
         display: 'swap'
     },
-    generate: {
-        routes: [
-          '/search' // デプロイ先のパスに対応するルートを追加
-        ]
-    },
 })
