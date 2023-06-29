@@ -28,16 +28,4 @@ export default defineNuxtConfig({
         },
         display: 'swap'
     },
-    // vite: {
-    //     server: {
-    //         proxy: {
-    //             "/api/": {
-    //                 target: 'https://idea-book.netlify.app',
-    //                 secure: false,
-    //                 changeOrigin: true,
-    //                 prependPath: true,
-    //             }
-    //         }
-    //     }
-    // },
 })
