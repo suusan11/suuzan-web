@@ -28,7 +28,7 @@
         offset: (page - 1) * limit,
     }
 
-    const { data } = await useFetch('/api/postList', { params: params })
+    const { data } = await useFetch('/api/test', { params: params })
     const { data: cats } = await useFetch('/api/tagList')
     console.log("👻" + JSON.stringify(data))
 
