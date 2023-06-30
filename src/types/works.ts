@@ -13,3 +13,8 @@ export type Post = {
         url: string;
     }
 } & MicroCMSListContent;
+
+export type Test = {
+    // [name: string]: any | number;
+    title: string;
+} & MicroCMSListContent;
