@@ -3,16 +3,17 @@ const { API_KEY, SERVICE_DOMAIN } = process.env;
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     srcDir: 'src/',
-    ssr: true,
+    // ssr: true,
     runtimeConfig: {
         serviceDomain: SERVICE_DOMAIN,
         apiKey: API_KEY,
     },
-    nitro: {
-        prerender: {
-            crawlLinks: true
-        }
-    },
+    // full static generate
+    // nitro: {
+    //     prerender: {
+    //         crawlLinks: true
+    //     }
+    // },
     app: {
         head: {
             title: 'IDEA BOOK',
