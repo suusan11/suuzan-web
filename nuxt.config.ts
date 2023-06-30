@@ -5,8 +5,8 @@ export default defineNuxtConfig({
     srcDir: 'src/',
     // ssr: true,
     runtimeConfig: {
+        serviceDomain: SERVICE_DOMAIN,
         apiKey: API_KEY,
-        serviceDomain: SERVICE_DOMAIN
         // target: 'server'
     },
 
