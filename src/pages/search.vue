@@ -18,7 +18,7 @@
     const { catId } = defineProps<Props>()
 
     const route = useRoute()
-    const query = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
+    const query:any = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
     const page = Number(route.query.page || 1)
     const limit = BLOG_PER_PAGE
     const params: MicroCMSQueries = {
