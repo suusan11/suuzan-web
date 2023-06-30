@@ -7,6 +7,6 @@ export default defineEventHandler(async (event) => {
     const data = await client.getList<Test>({
             endpoint: 'test',
             queries: queries
-        })
+        }).catch((err) => console.error(err));
     return data
 })
