@@ -12,14 +12,17 @@
         return !!query.value && !/^\s+$/.test(query.value)
     }
 
+    const router = useRouter();
+    
     function submit() {
         if (canSubmit()) {
-            return navigateTo({ //router.push()の代わりにvue3で採用しているページ遷移
-                path: '/search',
-                query: {
-                    q: query.value
-                }
-            })
+            return router.push({name: 'search', query: {q: query.value}});
+            // return navigateTo({ //router.push()の代わりにvue3で採用しているページ遷移
+            //     path: '/search',
+            //     query: {
+            //         q: query.value
+            //     }
+            // })
         }
     }
 </script>
