@@ -32,4 +32,16 @@ export default defineNuxtConfig({
         },
         display: 'swap'
     },
+    // hooks: {
+    //     'nitro:config': (config: NitroConfig) => {
+    //       // nitro の option 側に設定する場合、 scanDirs が nuxt 固有の設定を含んでしまうため、 mock モードではそれをここで上書きする
+    //       // isDebugMode は TEST=true で true を返却するメソッドがどこかで定義されてる
+    //       if (isDebugMode()) {
+    //         const testServer = resolve(__dirname, './test/server')
+    
+    //         config.srcDir = testServer
+    //         config.scanDirs = [testServer]
+    //       }
+    //     }
+    //   },
 })
