@@ -30,10 +30,9 @@
 
     const { data: posts } = await useFetch('/api/postList', { params: queries })
     const { data: cats } = await useFetch('/api/tagList')
-    console.log("👻" + JSON.stringify(posts))
 
-    // const totalCount = posts.value !== null ? posts.value.totalCount : null
-    // const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
+    const totalCount = posts.value !== null ? posts.value.totalCount : null
+    const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
 
     // queryが変化した場合にページをリロードする
     watch(() => route.query, () => location.reload())
@@ -42,13 +41,11 @@
 <template>
     <div class="l-container l-inner__flex">
         <main>
-            <!-- <p>💁‍♀️query: {{ query }}</p>
-            <p>💁‍♀️posts: {{ posts }}</p> -->
             <p class="result">「{{ query }}」の検索結果 {{ totalCount }}件</p>
-            <div v-if="posts && posts.contents">
-                <PostList :posts="posts && posts.contents" />
+            <div v-if="posts?.contents">
+                <PostList :posts="posts?.contents" />
             </div>
-            <div v-if="posts && posts.contents.length == 0">
+            <div v-if="posts?.contents.length == 0">
                 <h1 class="no-result">「{{ query }}」の記事は見つかりませんでした。</h1>
             </div>
         </main>
