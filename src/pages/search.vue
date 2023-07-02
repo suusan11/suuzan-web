@@ -18,19 +18,19 @@
     const { catId } = defineProps<Props>()
 
     const route = useRoute()
-    const query:any = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
+    const query = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
     const page = Number(route.query.page || 1)
     const limit = BLOG_PER_PAGE
-    const params: MicroCMSQueries = {
+    const queries: MicroCMSQueries = {
         q: query,
         orders: '-publishedAt',
         limit: limit,
         offset: (page - 1) * limit,
     }
 
-    const { data } = await useFetch('/api/test', { params: params })
+    const { data: posts } = await useFetch('/api/postList', { params: queries })
     const { data: cats } = await useFetch('/api/tagList')
-    console.log("👻" + JSON.stringify(data))
+    console.log("👻" + JSON.stringify(posts))
 
     // const totalCount = posts.value !== null ? posts.value.totalCount : null
     // const numPages = totalCount !== null ? Math.ceil(totalCount / limit) : null
