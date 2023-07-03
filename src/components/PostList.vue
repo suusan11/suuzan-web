@@ -6,7 +6,6 @@
     }
     const { posts } = defineProps<Props>()
 
-    console.log(JSON.stringify(posts));
 </script>
 
 <template>
