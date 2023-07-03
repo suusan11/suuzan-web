@@ -6,12 +6,18 @@
     }
     const { posts } = defineProps<Props>()
 
+    console.log(JSON.stringify(posts));
 </script>
 
 <template>
     <ul class="l-inner__flex flex-start">
         <li v-for="post in posts" :key="post.id" class="card">
-            <nuxt-link :to="`/${post.id}`">
+            <nuxt-link v-if="post.external_link" :to="post.external_link" target="_blank" rel="noopener">
+                <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
+                <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
+                <h1 class="title is__external">{{ post.title }}</h1>
+            </nuxt-link>
+            <nuxt-link v-else :to="`/${post.id}`">
                 <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
                 <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
                 <h1 class="title">{{ post.title }}</h1>
@@ -43,6 +49,15 @@
         }
         .title {
             font-size: r.f-rem(16);
+            &.is__external::after {
+                content: '';
+                display: inline-block;
+                background: url('../assets/images/common/external-link.svg') no-repeat;
+                background-size: contain;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: 0.5rem;
+            }
         }
         &:hover {
             opacity: 0.8;

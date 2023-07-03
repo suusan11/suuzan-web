@@ -11,7 +11,8 @@ export type Post = {
     body: string;
     thumbnail: {
         url: string;
-    }
+    },
+    external_link: string,
 } & MicroCMSListContent;
 
 export type Test = {
