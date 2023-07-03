@@ -11,7 +11,12 @@
 <template>
     <ul class="l-inner__flex flex-start">
         <li v-for="post in posts" :key="post.id" class="card">
-            <nuxt-link :to="`/${post.id}`">
+            <nuxt-link v-if="post.external_link" :to="post.external_link" target="_blank" rel="noopener">
+                <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
+                <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
+                <h1 class="title is__external">{{ post.title }}</h1>
+            </nuxt-link>
+            <nuxt-link v-else :to="`/${post.id}`">
                 <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
                 <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
                 <h1 class="title">{{ post.title }}</h1>
@@ -23,12 +28,19 @@
 <style lang="scss" scoped>
 @use "../assets/scss/foundation/font" as f;
 @use "../assets/scss/foundation/rem" as r;
+@use "../assets/scss/foundation/mixin" as m;
     .l-inner__flex {
         gap: 2rem .5%;
+        @include m.mq(sp) {
+            gap: 2rem 4%;
+        }
     }
     .card {
         width: 33%;
         text-align: left;
+        @include m.mq(sp) {
+            width: 48%;
+        }
         .thumbnail {
             width: 100%;
             margin-bottom: 0.5rem;
@@ -38,11 +50,24 @@
         }
         .date {
             font-family: f.$font-en;
-            font-size: r.f-rem(14);
+            font-size: clamp(r.f-rem(12), 2vw, r.f-rem(14));
             font-weight: 300;
         }
         .title {
-            font-size: r.f-rem(16);
+            font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
+            &.is__external::after {
+                content: '';
+                display: inline-block;
+                background: url('../assets/images/common/external-link.svg') no-repeat;
+                background-size: contain;
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-left: 0.5rem;
+                @include m.mq(sp_min) {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
         }
         &:hover {
             opacity: 0.8;

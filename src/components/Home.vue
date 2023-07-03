@@ -37,6 +37,6 @@
         <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
         </aside>
-        <Pagination v-if="numPages" :numPages="numPages" :current="page" :selectedCatId="catId"/>
+        <Pagination v-if="numPages !== 1" :numPages="numPages" :current="page" :selectedCatId="catId"/>
     </div>
 </template>

@@ -35,9 +35,17 @@
 <style lang="scss" scoped>
 @use "../assets/scss/foundation/color" as c;
 @use "../assets/scss/foundation/rem" as r;
+@use "../assets/scss/foundation/mixin" as m;
+
+    .search-form {
+        width: 300px;
+        @include m.mq(sp_min) {
+            width: 100%;
+        }
+    }
     .input__container  {
         position: relative;
-        width: 300px;
+        width: 100%;
         input[type=text] {
             width: 100%;
             height: 40px;

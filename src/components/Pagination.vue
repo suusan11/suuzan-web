@@ -1,6 +1,6 @@
 <script setup lang="ts">
     type Props = {
-        numPages: number;
+        numPages?: number | null;
         current: number;
         selectedCatId?: string | undefined;
         keyword?: string;

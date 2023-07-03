@@ -51,8 +51,16 @@ img {
 main {
     width: 70%;
     margin-right: 5%;
+    @include m.mq(sp_min) {
+        width: 100%;
+        margin: 0 auto 2rem;
+    }
 }
 
 aside {
     width: 25%;
+    @include m.mq(sp_min) {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
 }
