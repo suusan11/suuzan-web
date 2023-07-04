@@ -34,9 +34,9 @@
                 <h1 class="no-result">お探しの記事は見つかりませんでした。</h1>
             </div>
         </main>
-        <aside>
+        <!-- <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
-        </aside>
+        </aside> -->
         <Pagination v-if="numPages !== 1" :numPages="numPages" :current="page" :selectedCatId="catId"/>
     </div>
 </template>

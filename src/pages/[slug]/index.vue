@@ -38,9 +38,9 @@
                 <div class="article__content" v-html="article.body"></div>
             </div>
         </main>
-        <aside>
+        <!-- <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
-        </aside>
+        </aside> -->
     </div>
 </template>
 
