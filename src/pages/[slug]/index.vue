@@ -24,9 +24,15 @@
                 <div class="article__header">
                     <p class="thumbnail"><img :src="article.thumbnail.url" alt="article.title"></p>
                     <h1 class="title">{{ article.title }}</h1>
-                    <div class="l-inner__flex flex-start">
+                    <div class="l-inner__flex flex-start align-center">
                         <span class="date">{{ $formatDate(article.publishedAt) }}</span>
-                        <span v-for="cat in article.category" :key="cat.id" class="cat">{{ cat.name }}</span>
+                        <ul v-if="article.category.length !== 0" class="tags l-inner__flex flex-start">
+                            <li v-for="cat in article.category" :key="cat.id" class="cat">
+                                <NuxtLink :to="`/category/${cat.id}/page/1`">
+                                    {{ cat.name }}
+                                </NuxtLink>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="article__content" v-html="article.body"></div>
@@ -64,8 +70,13 @@
             .cat {
                 background-color: #f3f3f3;
                 border-radius: 20px;
-                font-size: r.f-rem(12);
+                font-size: clamp(r.f-rem(8), 2vw, r.f-rem(10));
                 padding: 0.15rem 1rem;
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
             }
         }
         &__content {

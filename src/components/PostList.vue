@@ -5,7 +5,6 @@
         posts: Post[];
     }
     const { posts } = defineProps<Props>()
-    console.log(JSON.stringify(posts))
 </script>
 
 <template>
@@ -14,25 +13,17 @@
             <nuxt-link v-if="post.external_link" :to="post.external_link" target="_blank" rel="noopener">
                 <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
                 <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
-                <ul v-if="post.category" class="tags l-inner__flex flex-start">
-                    <li v-for="cat in post.category" :key="cat.id" class="item">
-                        <NuxtLink :to="`/category/${cat.id}/page/1`">
-                            {{ cat.name }}
-                        </NuxtLink>
-                    </li>
-                </ul>
+                <div v-if="post.category.length !== 0" class="tags l-inner__flex flex-start">
+                    <span v-for="cat in post.category" :key="cat.id" class="cat">{{ cat.name }}</span>
+                </div>
                 <h1 class="title is__external">{{ post.title }}</h1>
             </nuxt-link>
             <nuxt-link v-else :to="`/${post.id}`">
                 <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
                 <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
-                <ul v-if="post.category" class="tags l-inner__flex flex-start">
-                    <li v-for="cat in post.category" :key="cat.id" class="item">
-                        <NuxtLink :to="`/category/${cat.id}/page/1`">
-                            {{ cat.name }}
-                        </NuxtLink>
-                    </li>
-                </ul>
+                <div v-if="post.category.length !== 0" class="tags l-inner__flex flex-start">
+                    <span v-for="cat in post.category" :key="cat.id" class="cat">{{ cat.name }}</span>
+                </div>
                 <h1 class="title">{{ post.title }}</h1>
             </nuxt-link>
         </li>
@@ -101,11 +92,9 @@
             height: 0.8rem;
             margin-right: 0.2rem;
         }
-        .item {
-            a {
-                color: #3F7BFD;
-            }
-            &:not(:last-child) a::after {
+        .cat {
+            color: #3F7BFD;
+            &:not(:last-child)::after {
                 content: ',';
                 display: inline-block;
                 margin-right: 0.2rem;
