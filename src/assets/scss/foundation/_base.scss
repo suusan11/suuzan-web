@@ -51,9 +51,9 @@ img {
 main {
     width: 100%;
     // margin-right: 5%;
+    margin-bottom: 2rem;
     @include m.mq(sp_min) {
         // width: 100%;
-        margin-bottom: 2rem;
     }
 }
 

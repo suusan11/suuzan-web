@@ -49,7 +49,9 @@
 @use "../../assets/scss/foundation/color" as c;
     .article {
         width: 100%;
+        max-width: 780px;
         text-align: left;
+        margin: 0 auto;
         &__header {
             margin-bottom: 2rem;
             .thumbnail {

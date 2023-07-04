@@ -35,13 +35,13 @@
 @use "../assets/scss/foundation/rem" as r;
 @use "../assets/scss/foundation/mixin" as m;
     .l-inner__flex {
-        gap: 2rem .5%;
+        gap: 2rem 1.3%;
         @include m.mq(sp) {
             gap: 2rem 4%;
         }
     }
     .card {
-        width: 33%;
+        width: 24%;
         text-align: left;
         @include m.mq(sp) {
             width: 48%;
