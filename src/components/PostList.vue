@@ -2,7 +2,7 @@
     import { Post } from '../types/works'
 
     type Props = {
-        posts: Post[];
+        posts: Post[]
     }
     const { posts } = defineProps<Props>()
 </script>
@@ -13,17 +13,17 @@
             <nuxt-link v-if="post.external_link" :to="post.external_link" target="_blank" rel="noopener">
                 <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
                 <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
-                <div v-if="post.category.length !== 0" class="tags l-inner__flex flex-start">
+                <!-- <div v-if="post.category.length !== 0" class="tags l-inner__flex flex-start">
                     <span v-for="cat in post.category" :key="cat.id" class="cat">{{ cat.name }}</span>
-                </div>
+                </div> -->
                 <h1 class="title is__external">{{ post.title }}</h1>
             </nuxt-link>
             <nuxt-link v-else :to="`/${post.id}`">
                 <p v-if="post.thumbnail" class="thumbnail"><img :src="post.thumbnail.url" :alt="post.title"></p>
                 <span class="date">{{ $formatDate(String(post.publishedAt)) }}</span>
-                <div v-if="post.category.length !== 0" class="tags l-inner__flex flex-start">
+                <!-- <div v-if="post.category.length !== 0" class="tags l-inner__flex flex-start">
                     <span v-for="cat in post.category" :key="cat.id" class="cat">{{ cat.name }}</span>
-                </div>
+                </div> -->
                 <h1 class="title">{{ post.title }}</h1>
             </nuxt-link>
         </li>
