@@ -14,8 +14,3 @@ export type Post = {
     },
     external_link: string,
 } & MicroCMSListContent;
-
-export type Test = {
-    // [name: string]: any | number;
-    title: string;
-} & MicroCMSListContent;

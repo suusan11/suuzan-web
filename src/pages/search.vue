@@ -12,11 +12,6 @@
         ],
     });
 
-    type Props = {
-        catId?: string | undefined
-    }
-    const { catId } = defineProps<Props>()
-
     const route = useRoute()
     const query = String(route.query.q) // SearchForm.vueで入力された検索キーワードを受け取る
     const page = Number(route.query.page || 1)
