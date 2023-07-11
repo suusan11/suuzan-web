@@ -9,7 +9,6 @@
         throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
     }
 
-    // const { data: cats } = await useFetch('/api/tagList')
 </script>
 
 <template>
@@ -33,9 +32,6 @@
                 <div class="article__content" v-html="article.body"></div>
             </div>
         </main>
-        <aside>
-            <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
-        </aside>
     </div>
 </template>
 
