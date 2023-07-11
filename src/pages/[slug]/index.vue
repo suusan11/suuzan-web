@@ -5,16 +5,11 @@
     const { data: article } = await useFetch(`/api/postDetail`, {
         params: { slug: slug },
     });
-
     if (!article.value) {
         throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
     }
 
-    type Props = {
-        catId?: string
-    }
-    const { catId } = defineProps<Props>()
-    const { data: cats } = await useFetch('/api/tagList')
+    // const { data: cats } = await useFetch('/api/tagList')
 </script>
 
 <template>
