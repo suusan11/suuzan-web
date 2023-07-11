@@ -1,8 +1,10 @@
 @use "../../foundation/rem" as r;
+@use "../../foundation/mixin" as m;
 
 .tag {
     display: inline-block;
     background-color: #f3f3f3;
+    border: 0.5px solid darken(#f3f3f3, 5);
     border-radius: 20px;
     font-size: clamp(r.f-rem(8), 2vw, r.f-rem(10));
     padding: 0.15rem 1rem;
