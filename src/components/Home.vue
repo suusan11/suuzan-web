@@ -23,7 +23,7 @@
     }
 
     const { data: posts } = await useFetch('/api/postList', { params: queries })
-    // const { data: cats } = await useFetch('/api/tagList')
+    const { data: cats } = await useFetch('/api/tagList')
     const numPages = posts.value !== null ? Math.ceil(posts.value.totalCount / limit) : null
 
     const ids = catObj?.map(cat => cat.id)
@@ -47,9 +47,9 @@
                 <h1 class="no-result">お探しの記事は見つかりませんでした。</h1>
             </div>
         </main>
-        <!-- <aside>
+        <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
-        </aside> -->
+        </aside>
         <Pagination v-if="numPages !== 1" :numPages="numPages" :current="page" :selectedCatId="catId"/>
     </div>
 </template>

@@ -16,9 +16,9 @@
 
 <template>
     <div class="tag__wrapper">
-        <h2 class="tag__header">カテゴリー</h2>
+        <!-- <h2 class="tag__header">タグ</h2> d -->
         <ul class="tag__list">
-            <li v-for="cat in cats" :key="cat.id" class="item">
+            <li v-for="cat in cats" :key="cat.id" class="tag">
                 <NuxtLink :to="`/category/${cat.id}/page/1`" :class="getClass(cat.id)">
                     {{ cat.name }}
                 </NuxtLink>
@@ -30,45 +30,29 @@
 <style lang="scss" scoped>
 @use "../assets/scss/foundation/color" as c;
 @use "../assets/scss/foundation/rem" as r;
+@use "../assets/scss/foundation/mixin" as m;
     .tag__wrapper {
         width: 100%;
         text-align: left;
     }
     .tag__header {
-        background-color: #f3f3f3;
+        @include m.darkenBg(#f3f3f3, 20);
         font-size: r.f-rem(16);
         padding: 0.3rem 1rem;
     }
     .tag__list {
-        background-color: c.$white;
-        border: 1px solid #f3f3f3;
-        border-top: none;
-        .item {
-            position: relative;
-            &:not(:last-child) {
-                border-bottom: 1px solid #f3f3f3;
-            }
-            &::after {
-                content: '';
-                display: inline-block;
-                position: absolute;
-                top: 50%;
-                right: 1rem;
-                width: 8px;
-                height: 8px;
-                border-top: 2px solid #f3f3f3;
-                border-right: 2px solid #f3f3f3;
-                transform: translateY(-50%) rotate(45deg);
-            }
-            a {
-                display: block;
-                color: c.$font-gray;
-                font-size: r.f-rem(15);
-                padding: 0.5rem 1rem;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
+        &::before {
+            content: '';
+            display: inline-block;
+            background: url('../assets/images/common/icon-tag-pink.svg') no-repeat;
+            background-size: contain;
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+        }
+        .tag {
+            font-size: clamp(r.f-rem(10), 2vw, r.f-rem(12));
+            margin: 0 0.3rem 0.5rem;
         }
     }
 </style>
