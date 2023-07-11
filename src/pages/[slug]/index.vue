@@ -22,7 +22,7 @@
                     <div class="l-inner__flex flex-start align-center">
                         <span class="date">{{ $formatDate(article.publishedAt) }}</span>
                         <ul v-if="article.category.length !== 0" class="tags l-inner__flex flex-start">
-                            <li v-for="cat in article.category" :key="cat.id" class="cat">
+                            <li v-for="cat in article.category" :key="cat.id" class="tag">
                                 <NuxtLink :to="`/category/${cat.id}/page/1`">
                                     {{ cat.name }}
                                 </NuxtLink>
@@ -33,9 +33,9 @@
                 <div class="article__content" v-html="article.body"></div>
             </div>
         </main>
-        <!-- <aside>
+        <aside>
             <Tags v-if="cats" :cats="cats.contents" :selectedCatId="catId" />
-        </aside> -->
+        </aside>
     </div>
 </template>
 
@@ -63,17 +63,6 @@
                 font-size: clamp(r.f-rem(12), 2vw, r.f-rem(14));
                 font-weight: 300;
                 margin-right: 0.5rem;
-            }
-            .cat {
-                background-color: #f3f3f3;
-                border-radius: 20px;
-                font-size: clamp(r.f-rem(8), 2vw, r.f-rem(10));
-                padding: 0.15rem 1rem;
-                @media (any-hover: hover) {
-                    &:hover {
-                        opacity: 0.8;
-                    }
-                }
             }
         }
         &__content {
