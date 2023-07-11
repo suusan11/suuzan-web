@@ -41,14 +41,18 @@
         padding: 0.3rem 1rem;
     }
     .tag__list {
+        position: relative;
+        padding-left: 25px;
         &::before {
             content: '';
             display: inline-block;
+            position: absolute;
+            top: 7px;
+            left: 0;
             background: url('../assets/images/common/icon-tag-pink.svg') no-repeat;
             background-size: contain;
             width: 22px;
             height: 22px;
-            vertical-align: middle;
         }
         .tag {
             font-size: clamp(r.f-rem(10), 2vw, r.f-rem(12));
