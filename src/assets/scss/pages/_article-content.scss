@@ -2,45 +2,70 @@
 @use "../foundation/color" as c;
 @use "../foundation/mixin" as m;
 
-.article-content {
-    &:deep(h2) {
+.article__content {
+    h2 {
         font-size: clamp(r.f-rem(18), 2vw, r.f-rem(20));
         font-weight: 500;
         border-bottom: 2px solid c.$border;
         margin-bottom: 0.5rem;
     }
-    &:deep(h3) {
+    h3 {
         font-size: clamp(r.f-rem(16), 2vw, r.f-rem(18));
         font-weight: 500;
         margin-bottom: 0.5rem;
     }
-    &:deep(p) {
+    p {
         font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
         font-weight: 300;
         text-align: left;
         margin-bottom: 0.5rem;
     }
-    &:deep(a) {
+    a {
         font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
         text-decoration: underline;
     }
-    &:deep(iframe) {
+    iframe {
         width: 100%;
     }
-    &:deep(code) {
-        background-color: white;
-        border-radius: 5px;
-        color: red;
-        padding: 0.2rem 0.5rem;
+    code {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #ff357f;
+        font-size: 85%;
+        padding: 2px 4px;
+        margin: 0 2px;
     }
-    &:deep(pre) {
-        background-color: black;
-        border-radius: 5px;
-        padding: 0.2rem 0.5rem;
+    pre {
+        background-color: #23241f;
+        border-radius: 3px;
+        color: #f8f8f2;
+        overflow: visible;
+        white-space: pre-wrap;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 5px 10px;
         code {
             background-color: transparent;
+            border: none;
             color: white;
-            padding: 0;
         }
+    }
+    blockquote {
+        border-left: 4px solid #ccc;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding-left: 16px;
+        span {
+            font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
+        }
+    }
+    ol li {
+        list-style-type: decimal;
+        font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
+    }
+    ul li {
+        list-style-type: disc;
+        font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
     }
 }
