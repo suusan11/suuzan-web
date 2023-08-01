@@ -27,7 +27,20 @@
     &:deep(iframe) {
         width: 100%;
     }
-    &:deep(strong) {
-        width: 100%;
+    &:deep(code) {
+        background-color: white;
+        border-radius: 5px;
+        color: red;
+        padding: 0.2rem 0.5rem;
+    }
+    &:deep(pre) {
+        background-color: black;
+        border-radius: 5px;
+        padding: 0.2rem 0.5rem;
+        code {
+            background-color: transparent;
+            color: white;
+            padding: 0;
+        }
     }
 }
