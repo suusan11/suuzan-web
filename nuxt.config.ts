@@ -13,6 +13,9 @@ export default defineNuxtConfig({
             meta: [{ name: 'description', content: 'suuzanのまなびコレクション' }],
             // link: [{ rel: 'icon', href: '/icon.png' }],
         },
+        pageTransition: { name: 'page', mode: 'out-in' }, //ページだけ遷移アニメーション（現在の要素がトランジション完了してからインする）
+        // pageTransition: { name: 'page', mode: 'in-out' }, //ページだけ遷移アニメーション（新しい要素がトランジション完了してからアウトする）
+        // layoutTransition: { name: 'layout', mode: 'out-in' } //レイアウトごと遷移アニメーション
     },
     css: ["@/assets/scss/style.scss"],
     modules: [
