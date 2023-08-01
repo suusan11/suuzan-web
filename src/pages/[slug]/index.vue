@@ -61,26 +61,26 @@
                 margin-right: 0.5rem;
             }
         }
-        &__content {
-            &:deep(h2) {
-                font-size: clamp(r.f-rem(16), 2vw, r.f-rem(18));
-                font-weight: 500;
-                border-bottom: 2px solid c.$border;
-                margin-bottom: 0.5rem;
-            }
-            &:deep(p) {
-                font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
-                font-weight: 300;
-                text-align: left;
-                margin-bottom: 0.5rem;
-            }
-            &:deep(a) {
-                font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
-                text-decoration: underline;
-            }
-            &:deep(iframe) {
-                width: 100%;
-            }
-        }
+        // &__content {
+        //     &:deep(h2) {
+        //         font-size: clamp(r.f-rem(16), 2vw, r.f-rem(18));
+        //         font-weight: 500;
+        //         border-bottom: 2px solid c.$border;
+        //         margin-bottom: 0.5rem;
+        //     }
+        //     &:deep(p) {
+        //         font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
+        //         font-weight: 300;
+        //         text-align: left;
+        //         margin-bottom: 0.5rem;
+        //     }
+        //     &:deep(a) {
+        //         font-size: clamp(r.f-rem(14), 2vw, r.f-rem(16));
+        //         text-decoration: underline;
+        //     }
+        //     &:deep(iframe) {
+        //         width: 100%;
+        //     }
+        // }
     }
 </style>
