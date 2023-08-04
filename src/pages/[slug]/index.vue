@@ -66,6 +66,11 @@
                 font-weight: 300;
                 margin-right: 0.5rem;
             }
+            .tags {
+                .tag:not(:last-child) {
+                    margin-right: 0.5rem;
+                }
+            }
         }
     }
 </style>
