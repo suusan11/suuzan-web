@@ -36,6 +36,8 @@
                     </div>
                 </div>
                 <div class="article__content" v-html="article.body"></div>
+                <p v-if="article.difficulty">{{ article.difficulty }}</p>
+                <p v-if="article.mon_hour">{{ article.mon_hour }}</p>
             </div>
         </main>
     </div>
