@@ -3,6 +3,10 @@
 @use "../foundation/mixin" as m;
 
 .article__content {
+    margin-bottom: 2rem;
+    @include m.mq(sp_min) {
+        margin-bottom: 1rem;
+    }
     h2 {
         font-size: clamp(r.f-rem(18), 2vw, r.f-rem(20));
         font-weight: 500;
