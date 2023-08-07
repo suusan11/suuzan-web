@@ -13,4 +13,6 @@ export type Post = {
         url: string;
     },
     external_link: string,
+    difficulty: string,
+    mon_hour: Number,
 } & MicroCMSListContent;
