@@ -15,6 +15,10 @@
         }
     })
 
+    const calclatedDifficulty = (difficulty:any) => {
+        return (5 - difficulty)
+    }
+
 </script>
 
 <template>
@@ -36,8 +40,17 @@
                     </div>
                 </div>
                 <div class="article__content" v-html="article.body"></div>
-                <p v-if="article.difficulty">{{ article.difficulty }}</p>
-                <p v-if="article.mon_hour">{{ article.mon_hour }}</p>
+                <div v-if="article.difficulty" class="article__difficulty l-inner__flex flex-start">
+                    <p class="field__title">難易度：</p>
+                    <div class="l-inner__flex flex-start">
+                        <p v-for="index in article.difficulty" :key="index"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#F2BE24" stroke="#F2BE24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></p>
+                        <p v-for="index in calclatedDifficulty(article.difficulty)" :key="index"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></p>
+                    </div>
+                </div>
+                <div v-if="article.mon_hour" class="l-inner__flex flex-start">
+                    <p class="field__title">工数：</p>
+                    <p>{{ article.mon_hour }}</p>
+                </div>
             </div>
         </main>
     </div>
