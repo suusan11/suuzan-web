@@ -51,6 +51,7 @@
             margin-bottom: 0.5rem;
             img {
                 aspect-ratio: 16/9;
+                object-fit: contain;
             }
         }
         .date {
