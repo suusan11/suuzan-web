@@ -10,8 +10,21 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'IDEA BOOK',
-            meta: [{ name: 'description', content: 'suuzanのまなびコレクション' }],
-            // link: [{ rel: 'icon', href: '/icon.png' }],
+            htmlAttrs: {
+                lang: "ja",
+            },
+            meta: [
+                { charset: "utf-8" },
+                {
+                    name: "viewport",
+                    content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0",
+                },
+                { name: 'description', content: 'suuzanのまなびコレクション' }
+            ],
+            link: [
+                { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+                { rel: 'apple-touch-icon', href: 'apple-touch-icon.png' }
+            ],
         },
         pageTransition: { name: 'page', mode: 'out-in' }, //ページだけ遷移アニメーション（現在の要素がトランジション完了してからインする）
         // pageTransition: { name: 'page', mode: 'in-out' }, //ページだけ遷移アニメーション（新しい要素がトランジション完了してからアウトする）
