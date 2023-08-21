@@ -59,8 +59,5 @@ main {
 
 aside {
     width: 100%;
-    @include m.mq(sp_min) {
-        width: 100%;
-        margin-bottom: 2rem;
-    }
+    margin-bottom: 2rem;
 }
