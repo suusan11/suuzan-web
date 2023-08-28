@@ -67,13 +67,9 @@
                 display: inline-block;
                 background: url('../assets/images/common/external-link.svg') no-repeat;
                 background-size: contain;
-                width: 1.2rem;
-                height: 1.2rem;
+                width: 0.9rem;
+                height: 1rem;
                 margin-left: 0.5rem;
-                @include m.mq(sp_min) {
-                    width: 1rem;
-                    height: 1rem;
-                }
             }
         }
         &:hover {
